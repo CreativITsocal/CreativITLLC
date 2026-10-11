@@ -278,21 +278,13 @@ ul { margin: 0; padding: 0; list-style: none; }
   border-radius: 8px;
 }
 .brand img {
-  width: 40px;
-  height: 40px;
-  transition: transform 0.8s var(--ease-spring);
+  width: auto;
+  height: 46px;
+  transition: transform 0.6s var(--ease-spring), opacity 0.25s ease;
 }
-.brand:hover img { transform: rotate(60deg); }
-.brand:active img { transform: rotate(60deg) scale(0.92); }
-.brand-word {
-  font-family: var(--f-display);
-  font-weight: 800;
-  font-style: italic;
-  font-size: 1.45rem;
-  letter-spacing: -0.03em;
-  color: var(--blue);
-}
-.brand-word b { color: var(--cyan); font-weight: 800; }
+.brand:hover img { transform: scale(1.03); }
+.brand:active img { transform: scale(0.97); opacity: 0.85; }
+@media (min-width: 960px) { .brand img { height: 56px; } }
 
 .nav-links {
   display: none;
@@ -302,12 +294,13 @@ ul { margin: 0; padding: 0; list-style: none; }
 .nav-links a:not(.btn) {
   position: relative;
   text-decoration: none;
-  font-size: 0.92rem;
-  font-weight: 500;
+  font-size: 1rem;
+  font-weight: 700;
   color: var(--muted);
   padding-block: 0.4rem;
   transition: color 0.25s ease;
 }
+.nav-links .btn { font-size: 0.95rem; font-weight: 700; }
 .nav-links a:not(.btn)::after {
   content: "";
   position: absolute;
