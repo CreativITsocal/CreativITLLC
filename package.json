@@ -1,0 +1,8 @@
+{
+  "name": "creativit-site",
+  "private": true,
+  "type": "module",
+  "dependencies": {
+    "puppeteer": "^25.0.4"
+  }
+}

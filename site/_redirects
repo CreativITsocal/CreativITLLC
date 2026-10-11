@@ -1,0 +1,5 @@
+# Old GoDaddy URLs → new pages
+/video-storytelling   /video/        301
+/video-storytelling/  /video/        301
+/real-estate-media    /photography/  301
+/home                 /              301

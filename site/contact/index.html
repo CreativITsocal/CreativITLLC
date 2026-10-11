@@ -1,0 +1,162 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Contact | CreativIT, LLC</title>
+  <meta name="description" content="Start a video, photography, social media, or web project with Justin Royse of CreativIT, LLC.">
+  <link rel="canonical" href="https://creativit.llc/contact/">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://creativit.llc/contact/">
+  <meta property="og:title" content="Contact | CreativIT, LLC">
+  <meta property="og:description" content="Start a video, photography, social media, or web project with Justin Royse of CreativIT, LLC.">
+  <meta property="og:image" content="https://creativit.llc/assets/img/og-image.jpg">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="theme-color" content="#07090c">
+  <link rel="icon" href="/assets/brand/favicon.png" type="image/png">
+  <link rel="apple-touch-icon" href="/assets/brand/apple-touch-icon.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,600..800&family=Hanken+Grotesk:wght@400;500;600&family=Instrument+Serif:ital@1&family=JetBrains+Mono:wght@400;500&display=swap">
+  <link rel="stylesheet" href="/assets/css/site.css">
+  <script src="/assets/js/site.js" defer></script>
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <header class="site-header">
+    <div class="wrap nav">
+      <a class="brand" href="/" aria-label="CreativIT home">
+        <img src="/assets/brand/icon-128.png" alt="" width="40" height="40">
+        <span class="brand-word">Creativ<b>IT</b></span>
+      </a>
+      <nav class="nav-links" aria-label="Primary">
+        <a href="/video/">Video</a>
+        <a href="/photography/">Photography</a>
+        <a href="/web-social/">Web &amp; Social</a>
+        <a href="/about/">About</a>
+        <a class="btn btn--primary btn--sm" href="/contact/" aria-current="page">Let’s talk</a>
+      </nav>
+      <button class="menu-toggle" type="button" aria-label="Open menu" aria-expanded="false" aria-controls="mobile-menu"><span></span></button>
+    </div>
+  </header>
+  <nav class="mobile-menu" id="mobile-menu" aria-label="Mobile">
+    <a href="/"><span>00</span>Home</a>
+    <a href="/video/"><span>01</span>Video</a>
+    <a href="/photography/"><span>02</span>Photography</a>
+    <a href="/web-social/"><span>03</span>Web &amp; Social</a>
+    <a href="/about/"><span>04</span>About</a>
+    <a href="/contact/" aria-current="page"><span>05</span>Contact</a>
+    <div class="mobile-meta">
+      <a href="mailto:justin@creativit.llc">justin@creativit.llc</a>
+      <a href="https://www.instagram.com/justinvisionit/" target="_blank" rel="noopener">@justinvisionit</a>
+    </div>
+  </nav>
+
+  <main id="main">
+    <section class="page-hero">
+      <div class="wrap load-in">
+        <p class="eyebrow"><span class="rec-dot"></span>Contact</p>
+        <h1 class="display">Let’s tell your <span class="serif">story.</span></h1>
+        <p class="lede">Share a few details about your project and I’ll get back to you personally. Not sure exactly what you need? That’s fine. We can figure it out together.</p>
+      </div>
+    </section>
+
+    <section class="section section--tight">
+      <div class="wrap contact-grid">
+        <aside class="contact-aside reveal" aria-label="Contact details">
+          <div class="contact-line"><span>Email</span><a href="mailto:justin@creativit.llc">justin@creativit.llc</a></div>
+          <div class="contact-line"><span>Instagram</span><a href="https://www.instagram.com/justinvisionit/" target="_blank" rel="noopener">@justinvisionit</a></div>
+          <div class="contact-line"><span>Based in</span><a href="/about/">Inland Empire, California</a></div>
+          <p class="muted" style="font-size:.95rem">I work with nonprofits, schools, businesses, and public agencies across Southern California.</p>
+        </aside>
+
+        <form class="form reveal" style="--d:.1s" name="project-inquiry" method="POST" action="/thanks/" data-netlify="true" netlify-honeypot="bot-field">
+          <input type="hidden" name="form-name" value="project-inquiry">
+          <p class="hp"><label>Leave this empty <input name="bot-field" tabindex="-1" autocomplete="off"></label></p>
+
+          <div class="form-row">
+            <div class="field">
+              <label for="f-name">Name</label>
+              <input class="input" id="f-name" name="name" type="text" autocomplete="name" required placeholder="Your name">
+            </div>
+            <div class="field">
+              <label for="f-email">Email</label>
+              <input class="input" id="f-email" name="email" type="email" autocomplete="email" required placeholder="you@organization.org">
+            </div>
+          </div>
+
+          <div class="field">
+            <label for="f-org">Organization <span class="opt">(optional)</span></label>
+            <input class="input" id="f-org" name="organization" type="text" autocomplete="organization" placeholder="Company, nonprofit, school…">
+          </div>
+
+          <fieldset class="field">
+            <legend>What can I help with?</legend>
+            <div class="chips">
+              <label class="chip"><input type="checkbox" name="services[]" value="Video storytelling"><span>Video storytelling</span></label>
+              <label class="chip"><input type="checkbox" name="services[]" value="Photography"><span>Photography</span></label>
+              <label class="chip"><input type="checkbox" name="services[]" value="Social media"><span>Social media</span></label>
+              <label class="chip"><input type="checkbox" name="services[]" value="Website"><span>Website</span></label>
+              <label class="chip"><input type="checkbox" name="services[]" value="Not sure yet"><span>Not sure yet</span></label>
+            </div>
+          </fieldset>
+
+          <div class="field">
+            <label for="f-timeline">Timeline</label>
+            <select class="input" id="f-timeline" name="timeline">
+              <option value="">Select one</option>
+              <option>Within a month</option>
+              <option>1–3 months</option>
+              <option>3+ months</option>
+              <option>Flexible / just exploring</option>
+            </select>
+          </div>
+
+          <div class="field">
+            <label for="f-message">Tell me about your project</label>
+            <textarea class="input" id="f-message" name="message" required placeholder="What’s the story, event, or goal? Any dates I should know about?"></textarea>
+          </div>
+
+          <div>
+            <button class="btn btn--primary" type="submit">Send message
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg></button>
+          </div>
+        </form>
+      </div>
+    </section>
+</main>
+
+  <footer class="site-footer">
+    <div class="wrap">
+      <div class="footer-top">
+        <div>
+          <img class="footer-logo" src="/assets/brand/logo-on-dark.png" alt="CreativIT. Technically creative. Creatively technical." width="1200" height="419" loading="lazy">
+          <p>Video storytelling, photography, social media, and web design for organizations and businesses across the Inland Empire.</p>
+        </div>
+        <div class="footer-col">
+          <h4>Explore</h4>
+          <ul>
+            <li><a href="/video/">Video Storytelling</a></li>
+            <li><a href="/photography/">Photography</a></li>
+            <li><a href="/web-social/">Web &amp; Social</a></li>
+            <li><a href="/about/">About</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Get in touch</h4>
+          <ul>
+            <li><a href="mailto:justin@creativit.llc">justin@creativit.llc</a></li>
+            <li><a href="https://www.instagram.com/justinvisionit/" target="_blank" rel="noopener">Instagram · @justinvisionit</a></li>
+            <li><a href="/contact/">Project inquiry form</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <span>© <span data-year>2026</span> CreativIT, LLC · All rights reserved</span>
+        <span class="tagline"><span>Technically creative.</span> <span>Creatively technical.</span></span>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>
