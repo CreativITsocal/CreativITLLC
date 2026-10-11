@@ -64,6 +64,51 @@
     if (!reduceMotion) setInterval(() => show((i = (i + 1) % slides.length)), 5200);
   }
 
+  /* ---------- Filmstrip auto-scroll (seamless loop) ---------- */
+  const strip = document.querySelector(".strip[data-autoscroll]");
+  if (strip && !reduceMotion) {
+    const originals = [...strip.children];
+    // Clone the set once so the loop is seamless; clones forward clicks to the originals.
+    originals.forEach((el) => {
+      const c = el.cloneNode(true);
+      c.removeAttribute("data-gallery");
+      c.setAttribute("aria-hidden", "true");
+      c.tabIndex = -1;
+      c.addEventListener("click", () => el.click());
+      strip.appendChild(c);
+    });
+    strip.classList.add("is-auto");
+
+    const SPEED = 32; // px per second
+    let pos = strip.scrollLeft, last = 0, paused = false, inView = false, resumeT;
+    const loopW = () => strip.children[originals.length].offsetLeft - strip.children[0].offsetLeft;
+    const pause = () => { paused = true; clearTimeout(resumeT); };
+    const resume = (delay = 0) => { clearTimeout(resumeT); resumeT = setTimeout(() => (paused = false), delay); };
+
+    strip.addEventListener("pointerenter", (e) => e.pointerType === "mouse" && pause());
+    strip.addEventListener("pointerleave", (e) => e.pointerType === "mouse" && resume());
+    strip.addEventListener("focusin", pause);
+    strip.addEventListener("focusout", () => resume());
+    strip.addEventListener("touchstart", pause, { passive: true });
+    strip.addEventListener("touchend", () => resume(2500), { passive: true });
+    new IntersectionObserver(([en]) => (inView = en.isIntersecting)).observe(strip);
+
+    const frame = (t) => {
+      const dt = last ? Math.min((t - last) / 1000, 0.1) : 0;
+      last = t;
+      const lightboxOpen = document.querySelector("dialog.lightbox[open]");
+      if (Math.abs(strip.scrollLeft - pos) > 2) pos = strip.scrollLeft; // user scrolled manually
+      if (!paused && inView && !lightboxOpen) {
+        pos += SPEED * dt;
+        const w = loopW();
+        if (w > 0 && pos >= w) pos -= w;
+        strip.scrollLeft = pos;
+      }
+      requestAnimationFrame(frame);
+    };
+    requestAnimationFrame(frame);
+  }
+
   /* ---------- Lightbox (films + photos) ---------- */
   const icon = {
     close: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M6 6l12 12M18 6L6 18"/></svg>',

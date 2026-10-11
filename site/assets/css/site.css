@@ -268,7 +268,7 @@ ul { margin: 0; padding: 0; list-style: none; }
   display: flex;
   align-items: center;
   justify-content: space-between;
-  height: 76px;
+  height: 88px;
 }
 .brand {
   display: inline-flex;
@@ -277,14 +277,21 @@ ul { margin: 0; padding: 0; list-style: none; }
   text-decoration: none;
   border-radius: 8px;
 }
+.brand { flex: none; }
 .brand img {
-  width: auto;
-  height: 46px;
+  /* Lock both dimensions to the logo's 1200×419 ratio so no browser can stretch it */
+  --logo-h: 48px;
+  height: var(--logo-h);
+  width: calc(var(--logo-h) * 1200 / 419);
+  max-width: none;
+  aspect-ratio: 1200 / 419;
+  object-fit: contain;
+  flex: none;
   transition: transform 0.6s var(--ease-spring), opacity 0.25s ease;
 }
 .brand:hover img { transform: scale(1.03); }
 .brand:active img { transform: scale(0.97); opacity: 0.85; }
-@media (min-width: 960px) { .brand img { height: 56px; } }
+@media (min-width: 960px) { .brand img { --logo-h: 64px; } }
 
 .nav-links {
   display: none;
@@ -403,7 +410,7 @@ ul { margin: 0; padding: 0; list-style: none; }
 
 .vf {
   position: absolute;
-  inset: clamp(76px, 10vh, 96px) var(--gutter) clamp(1rem, 3vh, 1.75rem);
+  inset: clamp(92px, 11vh, 104px) var(--gutter) clamp(1rem, 3vh, 1.75rem);
   pointer-events: none;
   z-index: 3;
   font-family: var(--f-mono);
@@ -895,6 +902,8 @@ a:hover .play svg { color: #00131c; }
   scrollbar-width: thin;
   scrollbar-color: var(--blue) transparent;
 }
+.strip.is-auto { scroll-snap-type: none; scrollbar-width: none; }
+.strip.is-auto::-webkit-scrollbar { display: none; }
 .strip::-webkit-scrollbar { height: 6px; }
 .strip::-webkit-scrollbar-thumb { background: var(--blue); border-radius: 3px; }
 .strip-item {
