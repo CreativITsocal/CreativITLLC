@@ -482,6 +482,11 @@ ul { margin: 0; padding: 0; list-style: none; }
   transition: opacity 1.6s ease, transform 9s linear;
 }
 .hero-slide.is-active { opacity: 1; transform: scale(1.0); }
+/* Phones/narrow tablets: shift the portrait crop right, to each slide's focal point (--fx) */
+@media (max-width: 820px) {
+  .hero-media video,
+  .hero-slide { object-position: var(--fx, 100%) center; transform-origin: var(--fx, 100%) center; }
+}
 .hero-media::after {
   content: "";
   position: absolute;
