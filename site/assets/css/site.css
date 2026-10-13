@@ -802,11 +802,12 @@ a:hover .play svg { color: #00131c; }
 }
 @media (min-width: 1080px) {
   .film-grid { grid-template-columns: repeat(12, 1fr); }
-  .film-grid .film:nth-child(1) { grid-column: span 7; }
-  .film-grid .film:nth-child(2) { grid-column: span 5; margin-top: var(--s-5); }
-  .film-grid .film:nth-child(3) { grid-column: span 5; }
-  .film-grid .film:nth-child(4) { grid-column: span 7; }
-  .film-grid .film:nth-child(5) { grid-column: 3 / span 8; }
+  /* Repeating stagger: wide/narrow, then narrow/wide; a lone last film centers */
+  .film-grid .film:nth-child(4n + 1) { grid-column: span 7; }
+  .film-grid .film:nth-child(4n + 2) { grid-column: span 5; margin-top: var(--s-5); }
+  .film-grid .film:nth-child(4n + 3) { grid-column: span 5; }
+  .film-grid .film:nth-child(4n + 4) { grid-column: span 7; }
+  .film-grid .film:last-child:nth-child(odd) { grid-column: 3 / span 8; }
 }
 .film {
   display: block;
